@@ -1,8 +1,19 @@
-# This probject is a simplified version of Fireship's Todo app, but with Firebase 9 and SvelteKit
+# TODO app with Svelte and Firebase
 
 https://fireship.io/lessons/svelte-v3-overview-firebase/
 
-Simply create a .env file with your Firebase creds:
+## Initializing Firebase
+
+If you are new to Firebase, complete the following steps.
+
+- Go to https://console.firebase.google.com/u/0/ and create a project
+- Create a Firestore Databse and enable the following settings
+
+1. Authentication > Sign-in method > Enable Google
+2. Database > Rules > change to ```true```
+3. Database > Indexes > Add Index 
+
+Create a .env file with your Firebase creds:
 
 ```typescript
 VITE_FIREBASE_APIKEY=
@@ -14,27 +25,7 @@ VITE_FIREBASE_APP_ID=
 VITE_FIREBASE_MEASUREMENT_ID=
 ```
 
-This app also uses svelte store instead of rxjs / rxfire for simplification.
-
-# create-svelte
-
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte@next
-
-# create a new project in my-app
-npm init svelte@next my-app
-```
-
-> Note: the `@next` is temporary
-
-## Developing
+## Run Project Locally
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
@@ -45,14 +36,3 @@ npm run dev
 npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.

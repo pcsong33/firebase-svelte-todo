@@ -2,6 +2,13 @@
 
 https://fireship.io/lessons/svelte-v3-overview-firebase/
 
+### Interface
+<img src="demo1.png" alt="drawing" width="600"/>
+
+### Google Authentication with Firebase
+<img src="demo2.png" alt="drawing" width="600"/>
+
+
 ## Initializing Firebase
 
 If you are new to Firebase, complete the following steps.

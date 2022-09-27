@@ -49,21 +49,24 @@ const firebaseApp = initializeApp(firebase_config);
 
 const auth = getAuth();
 
+// require authorization with Google
 export async function loginWithGoogle() {
     return await signInWithPopup(auth, new GoogleAuthProvider());
 }
 
+// add user logout functionality
 export async function logout() {
     return await signOut(auth);
 }
 
+// define user variable
 export const user = readable<UserRec>(
     null,
     (set: Subscriber<UserRec>) =>
         onIdTokenChanged(auth, (u: User) => set(u))
 );
 
-// firestore
+// connect to firestore
 
 const db = getFirestore(firebaseApp);
 
@@ -74,8 +77,7 @@ interface Todo {
     createdAt: Date;
 }
 
-// Todos
-
+// query firebase to get user todos
 export const getTodos = (uid: string) => writable<Todo[]>(
     null,
     (set: Subscriber<Todo[]>) =>
@@ -91,6 +93,7 @@ export const getTodos = (uid: string) => writable<Todo[]>(
             })
 );
 
+// add user tasks to existing databse
 export const addTodo = (uid: string, text: string) => {
     addDoc(collection(db, 'todos'), {
         uid,
@@ -100,10 +103,12 @@ export const addTodo = (uid: string, text: string) => {
     });
 }
 
+// update tasks in database
 export const updateTodo = (id: string, newStatus: boolean) => {
     updateDoc(doc(db, 'todos', id), { complete: newStatus });
 }
 
+// delete tasks in database
 export const deleteTodo = (id: string) => {
     deleteDoc(doc(db, 'todos', id));
 }

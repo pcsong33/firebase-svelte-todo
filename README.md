@@ -8,6 +8,10 @@ https://fireship.io/lessons/svelte-v3-overview-firebase/
 ### Google Authentication with Firebase
 <img src="demo2.png" alt="drawing" width="600"/>
 
+## Reflection
+This was the first one of the To-Do tasks where the tutorial I followed specifically implemented a user authorization step. While this could also have been implemented using MongoDB, Firebase had an easy user authorization protocol that directly linked to the useru's Google account. At a higher level, the differences in MongoDB and Firebase as a backend tool is that MongoDB is considered a more traditional database, while Firebase is a real-time application platform. MongdoDB is classified as a NoSQL database program. Firebase also offers NoSQL, but also offers real-time hosting of databases, content, social authentication (Google, Facebook, Twitter and Github), and notifications, or services, such as a real-time communication server. 
+
+Another new technology introduced in this assignment is Svelte. Svelte is not a monolithic JavaScript library imported by applications: instead, Svelte compiles HTML templates to specialized code that manipulates the DOM directly. This avoids the overhead associated with runtime intermediate representations, such as virtual DOM, unlike traditional frameworks (such as React and Vue) which carry out the bulk of their work at runtime, i.e in the browser.
 
 ## Initializing Firebase
 
